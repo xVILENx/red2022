@@ -1,0 +1,31 @@
+pagina css
+body {
+    background-color: black !important;
+    color: snow;
+}
+
+h1 {
+    font-size: 100px;
+    color:rgba(180, 10, 10, 0.863);
+    font-family: monospace;
+}
+
+p{
+    font-size: 40px;
+    color:rgba(180, 10, 10, 0.863);
+}
+
+a {
+    font-size: 40px;
+ }
+
+img { 
+    max-width: 450px;
+    border-style: inset;
+    border-color:rgba(180, 10, 10, 0.863);
+    border-radius:50%;
+}
+
+table {
+    font-size:20px;
+}
