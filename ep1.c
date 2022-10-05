@@ -7,7 +7,8 @@ int main(){
   float soma = 0, ord=0;
   float media, mediana=0, desvio_padrao;
   float variancia;  // Antes de achar o desvio padrão
-  float min= sizeof v, max=sizeof v;
+  float min= sizeof v; 
+  float max=sizeof v;
   float num[1000]; 
 
   printf("Digite a quantidade de elementos: ");
@@ -19,9 +20,7 @@ int main(){
     printf("Digite o valores #%d: ", v);
     scanf("%f", num+v );
     
-    if (num[v]<min) min= num[v];   
-    if (num[v]>max) max= num[v];
-        
+
     soma += num[v];
       
     media = soma / n;
@@ -31,7 +30,17 @@ int main(){
     desvio_padrao = sqrt(variancia);
   }
   
+  min = num[0];  
+  max=num[0];    
+
+  for(v = 0; v < n; v++) {
+      if (num[v]<min)
+          min= num[v];
+      if (num[v]>max)
+          max= num[v];        
+  }
   
+ 
     
   for(v = 0; v < n; v++) {
       for(vaux= v+1; vaux < n; vaux++) {
@@ -43,17 +52,18 @@ int main(){
       }
   }    
               
-          if (n % 2 == 0) 
-              mediana = (num[v / 2] + num[(v-1) / 2]) / 2;
-          else 
-              mediana = num[v / 2];
+  if (n % 2 == 0){
+      mediana = (num[v / 2] + num[(v-1) / 2]) / 2;
+  } else {
+      mediana = num[v / 2];
+  }
           
 
   printf("Media = %.2f \n", media);
     
-  printf("min = %f\n", min);  
+  printf("min = %2.2f\n", min);  
   
-  printf("max = %f\n", max);  
+  printf("max = %2.2f\n", max);  
     
   printf("Desvio Padrão = %.2f \n", desvio_padrao);  
     
