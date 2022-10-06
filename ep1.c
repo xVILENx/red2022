@@ -24,10 +24,14 @@ int main(){
     soma += num[v];
       
     media = soma / n;
+  }    
+    
+  for(variancia=0.0, v=0; v<=(n-1); v++){
+      variancia += (num[v]-media)*(num[v]-media);
+      variancia /= (float) n;
       
-    variancia+= pow((num[v] - media), 2)/n;
-      
-    desvio_padrao = sqrt(variancia);
+      desvio_padrao = sqrt(variancia);
+        
   }
   
   min = num[0];  
