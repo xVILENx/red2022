@@ -16,23 +16,26 @@ int main(){
   printf("\n");
   
 
+ 
   for(v = 0; v < n; v++) {
     printf("Digite o valores #%d: ", v);
-    scanf("%f", num+v );
+    scanf("%f", &num[v]);
     
 
-    soma += num[v];
+    soma = soma+ num[v];
       
-    media = soma / n;
-  }    
     
-  for(variancia=0.0, v=0; v<=(n-1); v++){
-      variancia += (num[v]-media)*(num[v]-media);
-      variancia /= (float) n;
+  } 
+  media = soma / n;
+    
+  for(v=0; v<n; v++){
+      variancia += (pow(num[v] - media,2))/n;
       
       desvio_padrao = sqrt(variancia);
+  } 
+  
         
-  }
+  
   
   min = num[0];  
   max=num[0];    
@@ -67,11 +70,11 @@ int main(){
     
   printf("min = %2.2f\n", min);  
   
-  printf("max = %2.2f\n", max);  
+  printf("max = %2.2f\n", max); 
     
-  printf("Desvio Padrão = %.2f \n", desvio_padrao);  
+  printf("Desvio Padrão = % f \n", desvio_padrao);  
     
-  printf("Mediana = %2.1f \n", mediana);  
+  printf("Mediana = %2.2f \n", mediana);  
 
   return 0;
 }
