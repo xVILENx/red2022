@@ -29,13 +29,10 @@ int main(){
   media = soma / n;
     
   for(v=0; v<n; v++){
-      variancia += (pow(num[v] - media,2))/n;
-      
-      desvio_padrao = sqrt(variancia);
-  } 
-  
-        
-  
+      variancia += pow(num[v] - media,2);
+  }     
+  desvio_padrao = sqrt(variancia/n-1);
+ 
   
   min = num[0];  
   max=num[0];    
